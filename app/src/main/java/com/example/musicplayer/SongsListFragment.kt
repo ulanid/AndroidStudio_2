@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 class SongsListFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: MusicAdapter
+    private lateinit var adapter: SongAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,32 +26,32 @@ class SongsListFragment : Fragment() {
         recyclerView = view.findViewById(R.id.musicListId)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val musicList = ArrayList<Music>()
-        musicList.add(Music(R.drawable.song1,"My Song", "Author A"))
-        musicList.add(Music(R.drawable.song2,"Cool Song", "Author B"))
-        musicList.add(Music(R.drawable.song3,"Just A Song", "Author C"))
+        val musicList = ArrayList<Song>()
+        musicList.add(Song(R.drawable.song1,"My Song", "Author A"))
+        musicList.add(Song(R.drawable.song2,"Cool Song", "Author B"))
+        musicList.add(Song(R.drawable.song3,"Just A Song", "Author C"))
 
-        musicList.add(Music(R.drawable.song1,"My Song", "Author A"))
-        musicList.add(Music(R.drawable.song2,"Cool Song", "Author B"))
-        musicList.add(Music(R.drawable.song3,"Just A Song", "Author C"))
+        musicList.add(Song(R.drawable.song1,"My Song", "Author A"))
+        musicList.add(Song(R.drawable.song2,"Cool Song", "Author B"))
+        musicList.add(Song(R.drawable.song3,"Just A Song", "Author C"))
 
-        musicList.add(Music(R.drawable.song1,"My Song", "Author A"))
-        musicList.add(Music(R.drawable.song2,"Cool Song", "Author B"))
-        musicList.add(Music(R.drawable.song3,"Just A Song", "Author C"))
+        musicList.add(Song(R.drawable.song1,"My Song", "Author A"))
+        musicList.add(Song(R.drawable.song2,"Cool Song", "Author B"))
+        musicList.add(Song(R.drawable.song3,"Just A Song", "Author C"))
 
-        musicList.add(Music(R.drawable.song1,"My Song", "Author A"))
-        musicList.add(Music(R.drawable.song2,"Cool Song", "Author B"))
-        musicList.add(Music(R.drawable.song3,"Just A Song", "Author C"))
+        musicList.add(Song(R.drawable.song1,"My Song", "Author A"))
+        musicList.add(Song(R.drawable.song2,"Cool Song", "Author B"))
+        musicList.add(Song(R.drawable.song3,"Just A Song", "Author C"))
 
-        musicList.add(Music(R.drawable.song1,"My Song", "Author A"))
-        musicList.add(Music(R.drawable.song2,"Cool Song", "Author B"))
-        musicList.add(Music(R.drawable.song3,"Just A Song", "Author C"))
+        musicList.add(Song(R.drawable.song1,"My Song", "Author A"))
+        musicList.add(Song(R.drawable.song2,"Cool Song", "Author B"))
+        musicList.add(Song(R.drawable.song3,"Just A Song", "Author C"))
 
-        adapter = MusicAdapter()
+        adapter = SongAdapter()
         adapter.setList(musicList)
 
-        adapter.setOnItemClickListener(object : MusicAdapter.OnItemClickListener {
-            override fun onItemClick(music: Music) {
+        adapter.setOnItemClickListener(object : SongAdapter.OnItemClickListener {
+            override fun onItemClick(music: Song) {
                 findNavController().navigate((SongsListFragmentDirections.actionMusicListFragmentToMusicInfoFragment(music.icon, music.name, music.author)))
             }
         })
@@ -61,5 +61,6 @@ class SongsListFragment : Fragment() {
         val itemDecoration = ItemDecoration(resources.getDimensionPixelSize(R.dimen.item_margin))
         recyclerView.addItemDecoration(itemDecoration)
     }
+
 }
 

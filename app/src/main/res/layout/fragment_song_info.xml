@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    tools:context=".SongInfoFragment">
+
+    <SeekBar
+        android:layout_width="280dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageView
+            android:id="@+id/IconInfo"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:clipToOutline="true"
+            tools:src="@tools:sample/avatars"
+            />
+
+        <TextView
+            android:id="@+id/NameInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/IconInfo"
+            android:layout_alignStart="@id/IconInfo"
+            android:layout_alignLeft="@id/IconInfo"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:text="InfoName"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:id="@+id/AuthorInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NameInfo"
+            android:layout_alignStart="@id/IconInfo"
+            android:layout_alignLeft="@id/IconInfo"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="AuthorInfo"
+            android:textSize="16sp"
+            />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
